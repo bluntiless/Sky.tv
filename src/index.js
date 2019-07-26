@@ -129,12 +129,14 @@ class TVPlatform {
         const services = accessory.getServices();
 
         for (const service of services) {
-            if (service instanceof Service.AccessoryInformation) {
+            if (service instanceof this.constructor.hap.Service.AccessoryInformation) {
                 for (const characteristic of [
                     'Manufacturer', 'Model', 'SerialNumber', 'FirmwareRevision', 'HardwareRevision',
                 ]) {
-                    const {value} = service.getCharacteristic(Characteristic[characteristic]);
-                    if (value) platform_accessory.getService(Service.AccessoryInformation).setCharacteristic(Characteristic[characteristic], value);
+                    const {value} = service.getCharacteristic(this.constructor.hap.Characteristic[characteristic]);
+                    if (!value) continue;
+                    platform_accessory.getService(this.constructor.hap.Service.AccessoryInformation)
+                        .setCharacteristic(this.constructor.hap.Characteristic[characteristic], value);
                 }
 
                 continue;
