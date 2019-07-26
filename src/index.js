@@ -106,9 +106,7 @@ class TVPlatform {
             external ? external_accessories.push(platform_accessory) : accessories.push(platform_accessory);
         }
 
-        for (const platform_accessory of external_accessories) {
-            this.constructor.homebridge_api.publishExternalAccessories(platform_accessory);
-        }
+        this.constructor.homebridge_api.publishExternalAccessories('sky-tv', external_accessories);
 
         return accessories;
     }
