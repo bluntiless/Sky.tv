@@ -1,0 +1,33 @@
+{
+    "name": "homebridge-sky-tv",
+    "description": "Homebridge plugin for controlling Sky+ as a TV.",
+    "keywords": [
+        "homebridge-plugin"
+    ],
+    "author": {
+        "name": "Samuel Elliott"
+    },
+    "version": "0.1.0",
+    "license": "MIT",
+    "homepage": "https://gitlab.fancy.org.uk/samuel/homebridge-sky-tv",
+    "bugs": "https://gitlab.fancy.org.uk/samuel/homebridge-sky-tv/issues",
+    "repository": {
+        "type": "git",
+        "url": "https://gitlab.fancy.org.uk/samuel/homebridge-sky-tv.git"
+    },
+    "main": "src/index.js",
+    "files": [
+        "src"
+    ],
+    "engines": {
+        "homebridge": ">=0.2.0"
+    },
+    "dependencies": {
+        "node-persist": "0.0.11",
+        "sky-plus-hd": "github:shauncampbell/sky-plus-hd#v1-dev",
+        "sky-remote": "github:dalhundal/sky-remote"
+    },
+    "devDependencies": {
+        "hap-nodejs": "^0.4.51"
+    }
+}
